@@ -1,4 +1,4 @@
-# 🚀 Irfan Shekh - Interactive Portfolio
+# 🚀 Irfan Shaikh - Interactive Portfolio
 
 A modern, interactive portfolio website showcasing my skills, projects, and experience as a Software Engineer and Full Stack Developer. Built with cutting-edge web technologies and featuring smooth animations, responsive design, and an engaging user experience.
 
@@ -94,7 +94,7 @@ The optimized production build will be in the `dist` folder.
 
 ## 💼 About Me
 
-I'm Irfan Shekh, an enthusiastic Computer Applications student with strong problem-solving skills and hands-on experience in:
+I'm Irfan Shaikh, an enthusiastic Computer Applications student with strong problem-solving skills and hands-on experience in:
 
 - **Programming**: Python, JavaScript, Java
 - **Frontend**: React, HTML, CSS
@@ -119,7 +119,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Built with [Mocha](https://getmocha.com)
 - Icons by [Lucide](https://lucide.dev)
 - Images from [Unsplash](https://unsplash.com)
 
@@ -127,4 +126,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ⭐ **If you like this project, please give it a star!** ⭐
 
-Made with ❤️ by Irfan Shekh
+Made with ❤️ by Irfan Shaikh

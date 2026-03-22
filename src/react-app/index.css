@@ -50,6 +50,20 @@ button, a {
   touch-action: manipulation;
 }
 
+/* Override default focus colors */
+button:focus,
+a:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* Remove blue highlight on tap/click */
+* {
+  -webkit-tap-highlight-color: rgba(245, 158, 11, 0.2);
+}
+
 /* Prevent text selection on mobile */
 .select-none {
   -webkit-user-select: none;
@@ -84,7 +98,7 @@ button, a {
 
 .bg-dynamic-alpha-25 {
   /* Fallback for browsers without color-mix support (Chrome < 111, Firefox < 113, Safari < 16.2) */
-  background-color: rgba(59, 130, 246, 0.15);
+  background-color: rgba(245, 158, 11, 0.15);
   /* Modern browsers with color-mix support - provides dynamic alpha blending */
   /* stylelint-disable-next-line property-no-unknown */
   background-color: color-mix(in srgb, var(--dynamic-color) 15%, transparent);
@@ -96,7 +110,7 @@ button, a {
 
 .shadow-dynamic {
   /* Fallback for browsers without color-mix support */
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.18);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.18);
   /* Modern browsers with color-mix support - provides dynamic shadow colors */
   /* stylelint-disable-next-line property-no-unknown */
   box-shadow: 0 0 20px color-mix(in srgb, var(--dynamic-color) 18%, transparent);
@@ -104,7 +118,7 @@ button, a {
 
 .text-shadow-dynamic {
   /* Fallback for browsers without color-mix support */
-  text-shadow: 0 0 20px rgba(59, 130, 246, 0.18);
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.18);
   /* Modern browsers with color-mix support - provides dynamic text shadows */
   /* stylelint-disable-next-line property-no-unknown */
   text-shadow: 0 0 20px color-mix(in srgb, var(--dynamic-color) 18%, transparent);
@@ -112,7 +126,7 @@ button, a {
 
 /* Project type specific colors */
 .project-type-web {
-  background-color: #3b82f6;
+  background-color: #f59e0b;
 }
 
 .project-type-mobile {
@@ -124,12 +138,21 @@ button, a {
 }
 
 /* Project specific colors */
-.project-color-blue {
-  background-color: #3b82f6;
+.project-color-amber {
+  background-color: #f59e0b;
 }
 
-.project-color-blue-opacity {
-  background-color: #3b82f6;
+.project-color-amber-opacity {
+  background-color: #f59e0b;
+  opacity: 0.05;
+}
+
+.project-color-orange {
+  background-color: #f97316;
+}
+
+.project-color-orange-opacity {
+  background-color: #f97316;
   opacity: 0.05;
 }
 
@@ -151,30 +174,12 @@ button, a {
   opacity: 0.05;
 }
 
-.project-color-amber {
-  background-color: #f59e0b;
-}
-
-.project-color-amber-opacity {
-  background-color: #f59e0b;
-  opacity: 0.05;
-}
-
 .project-color-red {
   background-color: #ef4444;
 }
 
 .project-color-red-opacity {
   background-color: #ef4444;
-  opacity: 0.05;
-}
-
-.project-color-cyan {
-  background-color: #06b6d4;
-}
-
-.project-color-cyan-opacity {
-  background-color: #06b6d4;
   opacity: 0.05;
 }
 
@@ -191,21 +196,17 @@ button, a {
   --dynamic-color: #059669;
 }
 
-.achievement-blue {
-  --dynamic-color: #3b82f6;
+.achievement-orange {
+  --dynamic-color: #f97316;
 }
 
 .achievement-red {
   --dynamic-color: #ef4444;
 }
 
-.achievement-cyan {
-  --dynamic-color: #06b6d4;
-}
-
 /* Stats specific colors */
-.stat-blue {
-  --dynamic-color: #3b82f6;
+.stat-amber {
+  --dynamic-color: #f59e0b;
 }
 
 .stat-purple {
@@ -216,13 +217,13 @@ button, a {
   --dynamic-color: #059669;
 }
 
-.stat-amber {
-  --dynamic-color: #f59e0b;
+.stat-orange {
+  --dynamic-color: #f97316;
 }
 
 /* Service specific colors */
-.service-blue {
-  --dynamic-color: #3b82f6;
+.service-amber {
+  --dynamic-color: #f59e0b;
 }
 
 .service-purple {
@@ -233,22 +234,18 @@ button, a {
   --dynamic-color: #059669;
 }
 
-.service-amber {
-  --dynamic-color: #f59e0b;
+.service-orange {
+  --dynamic-color: #f97316;
 }
 
 .service-red {
   --dynamic-color: #ef4444;
 }
 
-.service-cyan {
-  --dynamic-color: #06b6d4;
-}
-
 /* Contact specific colors and backgrounds */
-.contact-blue {
-  --dynamic-color: #3b82f6;
-  --contact-bg-color: #3b82f620;
+.contact-amber {
+  --dynamic-color: #f59e0b;
+  --contact-bg-color: #f59e0b20;
 }
 
 .contact-green {
@@ -272,8 +269,8 @@ button, a {
 /* Interactive background grid */
 .interactive-grid {
   background-image: 
-    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(245, 158, 11, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
@@ -282,16 +279,16 @@ button, a {
   background-color: #f97316;
 }
 
-.skill-blue {
-  background-color: #3b82f6;
+.skill-amber {
+  background-color: #f59e0b;
 }
 
 .skill-yellow {
   background-color: #eab308;
 }
 
-.skill-cyan {
-  background-color: #06b6d4;
+.skill-orange-dark {
+  background-color: #d97706;
 }
 
 .skill-purple {
@@ -317,16 +314,16 @@ button, a {
   }
   
   ::-webkit-scrollbar-track {
-    background: #000000;
+    background: #f3f4f6;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #3b82f6;
+    background: #f59e0b;
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #2563eb;
+    background: #d97706;
   }
 }
 
@@ -366,12 +363,19 @@ button, a {
   .font-mono {
     font-family: var(--font-mono);
   }
+  
+  /* Improved text rendering */
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 /* Custom Text Effects */
 @layer components {
   .text-gradient {
-    background: linear-gradient(135deg, #60a5fa, #a855f7, #06b6d4);
+    background: linear-gradient(135deg, #f59e0b, #d97706, #eab308);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -380,27 +384,27 @@ button, a {
   }
   
   .text-gradient-blue {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #f59e0b, #eab308);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   
   .text-gradient-purple {
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    background: linear-gradient(135deg, #f59e0b, #d97706);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   
   .text-shadow-glow {
-    text-shadow: 0 0 20px rgba(96, 165, 250, 0.3),
-                 0 0 40px rgba(96, 165, 250, 0.2),
-                 0 0 60px rgba(96, 165, 250, 0.1);
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.2),
+                 0 0 40px rgba(245, 158, 11, 0.15),
+                 0 0 60px rgba(245, 158, 11, 0.1);
   }
   
   .text-shadow-soft {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
   
   .heading-xl {
@@ -541,13 +545,26 @@ button, a {
 
 /* Enhanced text selection */
 ::selection {
-  background: rgba(96, 165, 250, 0.3);
-  color: white;
+  background: rgba(245, 158, 11, 0.2);
+  color: #1f2937;
 }
 
 ::-moz-selection {
-  background: rgba(96, 165, 250, 0.3);
-  color: white;
+  background: rgba(245, 158, 11, 0.2);
+  color: #1f2937;
+}
+
+/* Navigation button focus states */
+.nav-dot-button:focus,
+.nav-dot-button:focus-visible,
+.nav-dot-button:active {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3) !important;
+}
+
+.nav-dot-button.active {
+  background-color: #f59e0b !important;
+  color: white !important;
 }
 
 /* Performance optimizations */
@@ -558,4 +575,39 @@ button, a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* GPU acceleration for animations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Optimize animations with GPU acceleration */
+@layer utilities {
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

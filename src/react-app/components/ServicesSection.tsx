@@ -4,14 +4,13 @@ import { Code, Palette, Smartphone, Globe, Zap, Users, LucideIcon } from 'lucide
 // Helper function to get CSS class name for service colors
 const getServiceColorClass = (color: string): string => {
   const colorMap: { [key: string]: string } = {
-    '#3b82f6': 'service-blue',
-    '#8b5cf6': 'service-purple',
-    '#059669': 'service-green',
     '#f59e0b': 'service-amber',
-    '#ef4444': 'service-red',
-    '#06b6d4': 'service-cyan'
+    '#eab308': 'service-purple',
+    '#d97706': 'service-green',
+    '#f97316': 'service-red',
+    '#fbbf24': 'service-cyan'
   }
-  return colorMap[color] || 'service-blue'
+  return colorMap[color] || 'service-amber'
 }
 
 interface Service {
@@ -31,8 +30,8 @@ const services: Service[] = [
     description: 'Custom web applications built with modern frameworks and cutting-edge technologies.',
     icon: Code,
     features: ['React & Next.js', 'Full-Stack Solutions', 'API Integration', 'Performance Optimization'],
-    color: '#3b82f6',
-    gradient: 'from-blue-500 to-cyan-500'
+    color: '#f59e0b',
+    gradient: 'from-amber-500 to-yellow-500'
   },
   {
     id: '2',
@@ -40,8 +39,8 @@ const services: Service[] = [
     description: 'Beautiful, intuitive interfaces that provide exceptional user experiences.',
     icon: Palette,
     features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-    color: '#8b5cf6',
-    gradient: 'from-purple-500 to-pink-500'
+    color: '#eab308',
+    gradient: 'from-yellow-500 to-amber-500'
   },
   {
     id: '3',
@@ -49,8 +48,8 @@ const services: Service[] = [
     description: 'Cross-platform mobile applications that work seamlessly across all devices.',
     icon: Smartphone,
     features: ['Flutter Development', 'Native Performance', 'Cross-Platform', 'App Store Deployment'],
-    color: '#059669',
-    gradient: 'from-green-500 to-emerald-500'
+    color: '#f59e0b',
+    gradient: 'from-amber-500 to-yellow-500'
   },
   {
     id: '4',
@@ -67,8 +66,8 @@ const services: Service[] = [
     description: 'Speed up your website and improve user experience with advanced optimization techniques.',
     icon: Zap,
     features: ['Code Splitting', 'Image Optimization', 'Caching Strategies', 'Core Web Vitals'],
-    color: '#ef4444',
-    gradient: 'from-red-500 to-pink-500'
+    color: '#f97316',
+    gradient: 'from-orange-500 to-amber-500'
   },
   {
     id: '6',
@@ -76,8 +75,8 @@ const services: Service[] = [
     description: 'Technical guidance and mentoring to help teams build better digital products.',
     icon: Users,
     features: ['Technical Consultation', 'Code Reviews', 'Team Training', 'Architecture Planning'],
-    color: '#06b6d4',
-    gradient: 'from-cyan-500 to-blue-500'
+    color: '#fbbf24',
+    gradient: 'from-yellow-500 to-amber-500'
   }
 ]
 
@@ -88,17 +87,17 @@ export default function ServicesSection() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16"
+        className="text-center mb-10 md:mb-16"
       >
-        <h2 className="heading-lg mb-6 text-gradient text-shadow-glow">
+        <h2 className="heading-lg mb-6 bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
           Services & Expertise
         </h2>
-        <p className="body-lg text-gray-300 max-w-3xl mx-auto font-light">
-          Comprehensive digital solutions tailored to bring your ideas to life with <span className="text-gradient-blue font-medium">cutting-edge technology</span> and creative excellence
+        <p className="body-lg text-gray-700 max-w-3xl mx-auto font-light">
+          Comprehensive digital solutions tailored to bring your ideas to life with <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent font-medium">cutting-edge technology</span> and creative excellence
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {services.map((service, index) => {
           const Icon = service.icon
 
@@ -108,7 +107,7 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-gradient-to-br from-gray-900/90 to-black/90 rounded-2xl p-8 border border-gray-800/50 backdrop-blur-sm hover:border-gray-700/50 transition-all duration-500 overflow-hidden"
+              className="group relative bg-white rounded-2xl p-6 md:p-8 border border-gray-200 hover:border-gray-300 transition-all duration-500 overflow-hidden shadow-sm"
               whileHover={{ y: -10, scale: 1.02 }}
             >
               {/* Background Gradient */}
@@ -126,17 +125,17 @@ export default function ServicesSection() {
               </motion.div>
 
               {/* Content */}
-              <h3 className="heading-sm text-white mb-4 group-hover:text-gradient-blue transition-all duration-300">
+              <h3 className="heading-sm text-gray-900 mb-4 group-hover:text-amber-600 transition-all duration-300">
                 {service.title}
               </h3>
 
-              <p className="body-md text-gray-300 leading-relaxed mb-6">
+              <p className="body-md text-gray-700 leading-relaxed mb-6">
                 {service.description}
               </p>
 
               {/* Features */}
               <div className="space-y-3">
-                <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
+                <h4 className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                   Key Features
                 </h4>
                 <div className="space-y-2">
@@ -146,7 +145,7 @@ export default function ServicesSection() {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: (index * 0.1) + (fIndex * 0.05) }}
-                      className="flex items-center text-sm text-gray-300"
+                      className="flex items-center text-sm text-gray-700"
                     >
                       <div className={`w-2 h-2 rounded-full mr-3 flex-shrink-0 bg-dynamic ${getServiceColorClass(service.color)}`} />
                       {feature}
@@ -183,7 +182,7 @@ export default function ServicesSection() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="text-center mt-16"
+        className="text-center mt-10 md:mt-16"
       >
         <motion.button
           onClick={() => {
@@ -192,7 +191,7 @@ export default function ServicesSection() {
               contactSection.scrollIntoView({ behavior: 'smooth' })
             }
           }}
-          className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-bold flex items-center gap-3 mx-auto hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+          className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 text-white rounded-xl font-bold flex items-center gap-3 mx-auto hover:from-amber-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-amber-500/25"
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -204,7 +203,7 @@ export default function ServicesSection() {
             →
           </motion.div>
         </motion.button>
-        <p className="text-gray-400 text-sm mt-4">
+        <p className="text-gray-600 text-sm mt-4">
           Let's discuss how I can help bring your vision to life
         </p>
       </motion.div>

@@ -1,45 +1,51 @@
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect } from 'react'
+import { motion, useMotionValue, useSpring, useMotionTemplate, useTransform } from 'framer-motion'
 
 export default function InteractiveBackground() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [gradientOffset, setGradientOffset] = useState({ x: 50, y: 50 })
+  const mouseX = useMotionValue(50)
+  const mouseY = useMotionValue(50)
+
+  // Use springs to smooth the mouse movement
+  const smoothX = useSpring(mouseX, { stiffness: 50, damping: 20 })
+  const smoothY = useSpring(mouseY, { stiffness: 50, damping: 20 })
+
+  // Animate the gradient directly without triggering React state updates
+  const backgroundGradient = useMotionTemplate`radial-gradient(circle at ${smoothX}% ${smoothY}%, #fef3c7 0%, #fde68a 25%, #fcd34d 50%, #ffffff 100%)`
+
+  const gridX = useTransform(smoothX, (v) => v * 0.02)
+  const gridY = useTransform(smoothY, (v) => v * 0.02)
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth) * 100
-      const y = (e.clientY / window.innerHeight) * 100
-
-      setMousePosition({ x, y })
-      setGradientOffset({
-        x: 50 + (x - 50) * 0.1,
-        y: 50 + (y - 50) * 0.1
-      })
+      // Calculate percentage, default at 50%
+      const xObj = (e.clientX / window.innerWidth) * 100
+      const yObj = (e.clientY / window.innerHeight) * 100
+      
+      mouseX.set(50 + (xObj - 50) * 0.1)
+      mouseY.set(50 + (yObj - 50) * 0.1)
     }
 
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [mouseX, mouseY])
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
       {/* Animated gradient background */}
       <motion.div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-10 will-change-transform"
         style={{
-          background: `radial-gradient(circle at ${gradientOffset.x}% ${gradientOffset.y}%, #172554 0%, #2e1065 25%, #083344 50%, #000000 100%)`
+          background: backgroundGradient
         }}
-        animate={{
-          background: `radial-gradient(circle at ${gradientOffset.x}% ${gradientOffset.y}%, #172554 0%, #2e1065 25%, #083344 50%, #000000 100%)`
-        }}
-        transition={{ duration: 0.3 }}
       />
 
       {/* Floating orbs */}
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-40"
+          className="fixed w-2 h-2 bg-amber-400 rounded-full opacity-40 will-change-transform"
           style={{
             left: `${20 + i * 15}%`,
             top: `${30 + (i % 2) * 40}%`
@@ -61,12 +67,11 @@ export default function InteractiveBackground() {
 
       {/* Grid overlay */}
       <motion.div
-        className="absolute inset-0 opacity-5 interactive-grid"
-        animate={{
-          x: mousePosition.x * 0.02,
-          y: mousePosition.y * 0.02
+        className="absolute inset-0 opacity-5 interactive-grid will-change-transform"
+        style={{
+          x: gridX,
+          y: gridY
         }}
-        transition={{ duration: 0.1 }}
       />
     </div>
   )

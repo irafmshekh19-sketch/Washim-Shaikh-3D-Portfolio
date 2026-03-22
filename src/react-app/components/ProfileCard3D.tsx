@@ -18,7 +18,7 @@ export default function ProfileCard3D() {
   // Spring animation for hover effects
   const { scale, color } = useSpring({
     scale: hovered ? 1.1 : 1,
-    color: hovered ? '#3b82f6' : '#1e293b',
+    color: hovered ? '#f59e0b' : '#1e293b',
     config: { mass: 1, tension: 280, friction: 30 }
   })
 
@@ -54,7 +54,7 @@ export default function ProfileCard3D() {
         scale={[12, 12, 12]}
         size={3}
         speed={0.6}
-        color="#60a5fa"
+        color="#f59e0b"
       />
 
       <Sparkles
@@ -111,19 +111,19 @@ export default function ProfileCard3D() {
             color="#ffffff"
             anchorX="center"
             anchorY="middle"
-            font="Inter"
+            font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
           >
-            IRFAN SHEKH
+            IRFAN SHAIKH
           </Text>
 
           {/* Title */}
           <Text
             position={[0, -0.2, 0.15]}
             fontSize={0.15}
-            color="#60a5fa"
+            color="#f59e0b"
             anchorX="center"
             anchorY="middle"
-            font="Inter"
+            font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
           >
             Web Developer
           </Text>
@@ -136,7 +136,7 @@ export default function ProfileCard3D() {
             smoothness={4}
           >
             <meshStandardMaterial
-              color="#059669"
+              color="#f59e0b"
               transparent
               opacity={0.8}
               emissive="#064e3b"
@@ -150,7 +150,7 @@ export default function ProfileCard3D() {
             color="#ffffff"
             anchorX="center"
             anchorY="middle"
-            font="Inter"
+            font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
           >
             2+ YEARS
           </Text>
@@ -158,9 +158,9 @@ export default function ProfileCard3D() {
           {/* Skills Icons with enhanced animations */}
           {[
             { pos: [-0.8, -1.4, 0.15] as [number, number, number], color: "#f97316", label: "HTML" },
-            { pos: [-0.3, -1.4, 0.15] as [number, number, number], color: "#3b82f6", label: "CSS" },
+            { pos: [-0.3, -1.4, 0.15] as [number, number, number], color: "#f59e0b", label: "CSS" },
             { pos: [0.3, -1.4, 0.15] as [number, number, number], color: "#eab308", label: "JS" },
-            { pos: [0.8, -1.4, 0.15] as [number, number, number], color: "#06b6d4", label: "React" }
+            { pos: [0.8, -1.4, 0.15] as [number, number, number], color: "#fbbf24", label: "React" }
           ].map((skill, index) => (
             <Float
               key={index}
@@ -191,7 +191,7 @@ export default function ProfileCard3D() {
                   color="#ffffff"
                   anchorX="center"
                   anchorY="middle"
-                  font="Inter"
+                  font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
                 >
                   {skill.label}
                 </Text>
@@ -202,9 +202,9 @@ export default function ProfileCard3D() {
       </Float>
 
       {/* Enhanced Lighting */}
-      <pointLight position={[2, 2, 2]} intensity={1.2} color="#60a5fa" />
-      <pointLight position={[-2, -2, 2]} intensity={0.8} color="#8b5cf6" />
-      <pointLight position={[0, 5, 3]} intensity={0.6} color="#06b6d4" />
+      <pointLight position={[2, 2, 2]} intensity={1.2} color="#f59e0b" />
+      <pointLight position={[-2, -2, 2]} intensity={0.8} color="#eab308" />
+      <pointLight position={[0, 5, 3]} intensity={0.6} color="#fbbf24" />
       <ambientLight intensity={0.4} />
 
       {/* Dynamic spotlight that follows mouse */}

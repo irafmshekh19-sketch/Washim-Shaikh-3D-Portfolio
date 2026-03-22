@@ -25,10 +25,10 @@ export default function ParticleField({ count, radius, speed }: ParticleFieldPro
       positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta)
       positions[i * 3 + 2] = r * Math.cos(phi)
       
-      // Random colors between blue and purple
+      // Random colors between orange and yellow
       const color = new THREE.Color()
       color.setHSL(
-        0.6 + Math.random() * 0.2, // Hue: blue to purple
+        0.05 + Math.random() * 0.1, // Hue: orange to yellow
         0.7 + Math.random() * 0.3, // Saturation
         0.5 + Math.random() * 0.5  // Lightness
       )

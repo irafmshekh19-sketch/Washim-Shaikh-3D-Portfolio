@@ -27,21 +27,21 @@ const FloatingShapes = memo(function FloatingShapes() {
       component: RoundedBox,
       props: { args: [0.5, 0.5, 0.5], radius: 0.1 },
       position: [4, 3, -2] as [number, number, number],
-      color: '#3b82f6',
+      color: '#f59e0b',
       speed: 1.5
     },
     {
       component: Sphere,
       props: { args: [0.3] },
       position: [-4, 2, -1] as [number, number, number],
-      color: '#8b5cf6',
+      color: '#eab308',
       speed: 2
     },
     {
       component: Torus,
       props: { args: [0.3, 0.1, 8, 16] },
       position: [3, -2, -3] as [number, number, number],
-      color: '#06b6d4',
+      color: '#fbbf24',
       speed: 1.8
     },
     {
@@ -55,14 +55,14 @@ const FloatingShapes = memo(function FloatingShapes() {
       component: Sphere,
       props: { args: [0.25] },
       position: [5, -1, 1] as [number, number, number],
-      color: '#ef4444',
+      color: '#f97316',
       speed: 2.5
     },
     {
       component: Torus,
       props: { args: [0.2, 0.08, 6, 12] },
       position: [-5, 1, 2] as [number, number, number],
-      color: '#10b981',
+      color: '#f59e0b',
       speed: 1.7
     }
   ]

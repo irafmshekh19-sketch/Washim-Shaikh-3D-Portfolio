@@ -46,7 +46,7 @@ export function LazyImage({ src, alt, className, ...props }: LazyImageProps) {
               animate={{ rotate: 360 }}
               transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
             >
-              <Zap className="w-6 h-6 text-blue-400" />
+              <Zap className="w-6 h-6 text-amber-500" />
             </motion.div>
           </motion.div>
         )}
@@ -99,7 +99,7 @@ export function BackToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300 md:hidden"
+          className="fixed bottom-6 right-6 z-50 p-3 bg-amber-500 text-white rounded-full shadow-lg hover:bg-amber-600 transition-colors duration-300 md:hidden"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
@@ -110,5 +110,4 @@ export function BackToTop() {
   )
 }
 
-// Export the utility function from a separate file to avoid react-refresh warnings
-export { useViewportHeight } from './utils/mobileUtils'
+// End of MobileOptimizations
