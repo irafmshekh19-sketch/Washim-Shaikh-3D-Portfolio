@@ -1,5 +1,7 @@
 # 🚀 Irfan Shaikh - Interactive Portfolio
 
+**Live Portfolio:** [https://irfanshaikhportfolio.netlify.app/](https://irfanshaikhportfolio.netlify.app/)
+
 A modern, interactive portfolio website showcasing my skills, projects, and experience as a Software Engineer and Full Stack Developer. Built with cutting-edge web technologies and featuring smooth animations, responsive design, and an engaging user experience.
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
@@ -107,6 +109,7 @@ Currently pursuing BCA at Smt Kumudben Debar College (2023-2026) and seeking opp
 
 ## 📫 Contact
 
+- **Portfolio**: [irfanshaikhportfolio.netlify.app](https://irfanshaikhportfolio.netlify.app/)
 - **Email**: irfanshaikh110805@gmail.com
 - **Phone**: +91 9964264412
 - **Location**: Vijayapura, Karnataka, India
