@@ -4,36 +4,44 @@ import { GraduationCap, Code, Database, Rocket } from 'lucide-react'
 
 const milestones = [
   {
-    year: '2023',
-    title: 'Started BCA Journey',
-    description: 'Began studying Computer Applications at Smt Kumudben Debar College, focusing on core programming concepts.',
+    year: '2022',
+    title: 'Started B.E. CSE Journey',
+    description: 'Began Bachelor of Engineering in Computer Science and Engineering at Beary\'s Institute of Technology (BIT), Mangalore. Current CGPA: 7.87/10.',
     icon: GraduationCap,
     color: 'from-amber-500 to-yellow-500',
     align: 'left'
   },
   {
-    year: '2024',
-    title: 'Full-Stack Development',
-    description: 'Built complex full-stack applications like Hotel Everest booking system, mastering React and Python Flask.',
+    year: 'Apr-May 2024',
+    title: 'AI with Python',
+    description: 'Built AI models with Python for real-world applications. Gained hands-on experience in artificial intelligence and machine learning fundamentals.',
     icon: Code,
     color: 'from-amber-500 to-yellow-500',
     align: 'right'
   },
   {
-    year: '2025',
-    title: 'AI & Data Science',
-    description: 'Dove deep into Machine Learning. Developed a Fruit Disease Detection system using TensorFlow and MobileNetV2.',
+    year: 'Dec 2024-Feb 2025',
+    title: 'Machine Learning with Python',
+    description: 'Applied ML algorithms including classification and regression. Developed expertise in data analysis and predictive modeling.',
     icon: Database,
     color: 'from-emerald-500 to-green-500',
     align: 'left'
   },
   {
-    year: '2026',
-    title: 'Ready for the Industry',
-    description: 'Graduating as a Software Engineer, bringing ideas to life with scalable backend systems and immersive UIs.',
-    icon: Rocket,
+    year: 'Jul-Sep 2025',
+    title: 'Full Stack Development',
+    description: 'Developed web applications using Django, JavaScript, and MySQL. Mastered end-to-end web development with modern frameworks.',
+    icon: Code,
     color: 'from-purple-500 to-pink-500',
     align: 'right'
+  },
+  {
+    year: '2026',
+    title: 'Ready for the Industry',
+    description: 'Graduating as a Software Engineer with expertise in Python, Web Development, and Database Management. Seeking opportunities as Software Engineer, Web Developer, or Data Analyst.',
+    icon: Rocket,
+    color: 'from-amber-500 to-yellow-500',
+    align: 'left'
   }
 ]
 

@@ -15,15 +15,15 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'irfanshaikh110805@email.com',
-    href: 'mailto:irfanshaikh110805@email.com',
+    value: 'washimshaikh33@gmail.com',
+    href: 'mailto:washimshaikh33@gmail.com',
     color: '#f59e0b'
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+91 9964264412',
-    href: 'tel:+919964264412',
+    value: '+91 888 495 8185',
+    href: 'tel:+918884958185',
     color: '#eab308'
   },
   {
@@ -70,31 +70,31 @@ const socialLinks = [
   {
     icon: LinkedinIcon,
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/irfan-shaikh-380461392',
+    href: 'https://www.linkedin.com/in/washim-shaikh-349868281',
     color: '#0077b5'
   },
   {
     icon: GithubIcon,
     label: 'GitHub',
-    href: 'https://github.com/irfanshaikh110805-glitch',
+    href: 'https://github.com/washim-8',
     color: '#333'
   },
   {
     icon: FacebookIcon,
     label: 'Facebook',
-    href: 'https://www.facebook.com/irfan.shaikh.870227',
+    href: 'https://www.facebook.com/washim.shaikh',
     color: '#1877f2'
   },
   {
     icon: InstagramIcon,
     label: 'Instagram',
-    href: 'https://www.instagram.com/dark_rider170?igsh=dWhha2FqeHlqNHky',
+    href: 'https://www.instagram.com/washim.shaikh',
     color: '#e4405f'
   },
   {
     icon: WhatsappIcon,
     label: 'WhatsApp',
-    href: 'https://wa.link/5fgh90',
+    href: 'https://wa.me/918884958185',
     color: '#25d366'
   }
 ]

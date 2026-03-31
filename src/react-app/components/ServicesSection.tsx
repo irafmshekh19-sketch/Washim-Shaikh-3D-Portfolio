@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Code, Palette, Smartphone, Globe, Zap, Users, LucideIcon } from 'lucide-react'
+import { Code, Database, Globe, Zap, Users, LucideIcon } from 'lucide-react'
 
 // Helper function to get CSS class name for service colors
 const getServiceColorClass = (color: string): string => {
@@ -27,54 +27,54 @@ const services: Service[] = [
   {
     id: '1',
     title: 'Web Development',
-    description: 'Custom web applications built with modern frameworks and cutting-edge technologies.',
+    description: 'Full-stack web applications built with Django, JavaScript, and MySQL. Expertise in building scalable and responsive web solutions.',
     icon: Code,
-    features: ['React & Next.js', 'Full-Stack Solutions', 'API Integration', 'Performance Optimization'],
+    features: ['Django Framework', 'JavaScript & jQuery', 'MySQL Database', 'Responsive Design'],
     color: '#f59e0b',
     gradient: 'from-amber-500 to-yellow-500'
   },
   {
     id: '2',
-    title: 'UI/UX Design',
-    description: 'Beautiful, intuitive interfaces that provide exceptional user experiences.',
-    icon: Palette,
-    features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
+    title: 'Python Development',
+    description: 'Custom Python applications for automation, data processing, and backend development with modern frameworks.',
+    icon: Code,
+    features: ['Python Programming', 'Django Backend', 'API Development', 'Data Processing'],
     color: '#eab308',
     gradient: 'from-yellow-500 to-amber-500'
   },
   {
     id: '3',
-    title: 'Mobile Development',
-    description: 'Cross-platform mobile applications that work seamlessly across all devices.',
-    icon: Smartphone,
-    features: ['Flutter Development', 'Native Performance', 'Cross-Platform', 'App Store Deployment'],
+    title: 'Database Management',
+    description: 'Database design, optimization, and management using MySQL and DBMS concepts for efficient data storage.',
+    icon: Database,
+    features: ['MySQL Database', 'DBMS Concepts', 'Query Optimization', 'Data Modeling'],
     color: '#f59e0b',
     gradient: 'from-amber-500 to-yellow-500'
   },
   {
     id: '4',
-    title: '3D Web Experiences',
-    description: 'Immersive 3D web experiences that captivate and engage your audience.',
-    icon: Globe,
-    features: ['Three.js', 'WebGL', 'Interactive Animations', 'VR/AR Integration'],
+    title: 'Machine Learning',
+    description: 'ML solutions using classification and regression algorithms for predictive analytics and data-driven insights.',
+    icon: Zap,
+    features: ['Classification Models', 'Regression Analysis', 'Data Analysis', 'Predictive Modeling'],
     color: '#f59e0b',
     gradient: 'from-yellow-500 to-orange-500'
   },
   {
     id: '5',
-    title: 'Performance Optimization',
-    description: 'Speed up your website and improve user experience with advanced optimization techniques.',
-    icon: Zap,
-    features: ['Code Splitting', 'Image Optimization', 'Caching Strategies', 'Core Web Vitals'],
+    title: 'Software Development',
+    description: 'End-to-end software solutions with clean code, best practices, and modern development methodologies.',
+    icon: Globe,
+    features: ['Clean Code', 'Version Control (Git)', 'Problem Solving', 'Agile Development'],
     color: '#f97316',
     gradient: 'from-orange-500 to-amber-500'
   },
   {
     id: '6',
-    title: 'Consulting & Mentoring',
-    description: 'Technical guidance and mentoring to help teams build better digital products.',
+    title: 'Data Analysis',
+    description: 'Data-driven insights and analytics to help make informed business decisions and optimize processes.',
     icon: Users,
-    features: ['Technical Consultation', 'Code Reviews', 'Team Training', 'Architecture Planning'],
+    features: ['Data Visualization', 'Statistical Analysis', 'Pattern Recognition', 'Business Intelligence'],
     color: '#fbbf24',
     gradient: 'from-yellow-500 to-amber-500'
   }

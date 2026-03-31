@@ -7,17 +7,17 @@ import { useMobileDetection } from '@/react-app/hooks/useMobileDetection'
 export default function HeroPortfolio() {
   const isMobile = useMobileDetection()
   const roleTexts = [
-    'Creative Developer',
-    'Digital Artist',
-    'Problem Solver',
-    'UI/UX Designer',
-    'Full Stack Developer'
+    'Software Engineer',
+    'Full Stack Developer',
+    'Web Developer',
+    'Data Analyst',
+    'Problem Solver'
   ]
 
   const stats = [
-    { number: '5+ ', label: 'Major Projects' },
+    { number: '5+', label: 'Major Projects' },
     { number: '100%', label: 'Dedicated' },
-    { number: 'BCA', label: 'Computer Applications' },
+    { number: 'B.E.', label: 'Computer Science' },
     { number: '24/7', label: 'Support Available' }
   ]
 
@@ -82,7 +82,7 @@ export default function HeroPortfolio() {
 
             <div className="relative z-10">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter text-center lg:text-left font-display leading-[0.95] mb-2">
-                <span className="text-gray-900">IRFAN</span>
+                <span className="text-gray-900">WASHIM</span>
                 {' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600">
                   SHAIKH
@@ -101,8 +101,8 @@ export default function HeroPortfolio() {
             </div>
             
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Crafting <span className="text-amber-600 font-semibold">digital experiences</span> that blend creativity with cutting-edge technology.
-              Specializing in <span className="font-mono text-sm text-amber-700 bg-amber-50/80 px-2 py-0.5 rounded border border-amber-100">interactive web applications</span> and immersive user interfaces.
+              Enthusiastic Computer Science Engineering fresher with strong <span className="text-amber-600 font-semibold">problem-solving skills</span> and hands-on experience in Python, Web Development, and Database Management.
+              Skilled in building and deploying <span className="font-mono text-sm text-amber-700 bg-amber-50/80 px-2 py-0.5 rounded border border-amber-100">web applications</span> that solve real-world challenges.
             </p>
 
             {/* Action Buttons */}
@@ -129,7 +129,7 @@ export default function HeroPortfolio() {
 
               <motion.a
                 href="/resume.pdf"
-                download="Irfan_Shaikh_Resume.pdf"
+                download="Washim_Shaikh_Resume.pdf"
                 className="group px-8 py-4 border-2 border-gray-200 bg-white/80 backdrop-blur-sm text-gray-900 rounded-xl font-semibold flex items-center justify-center gap-3 hover:border-amber-400 hover:bg-white hover:shadow-lg transition-all duration-300"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -149,7 +149,7 @@ export default function HeroPortfolio() {
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   className="text-center lg:text-left"
                 >
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent mb-1">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent mb-1 whitespace-nowrap">
                     {stat.number}
                   </div>
                   <div className="text-xs md:text-sm text-gray-500 font-medium">
@@ -176,10 +176,8 @@ export default function HeroPortfolio() {
                 {/* Enhanced image with premium styling */}
                 <div className="relative w-full h-full flex items-center justify-center">
                   <img
-                    src="/profile.webp"
-                    srcSet="/profile-small.webp 600w, /profile.webp 1177w"
-                    sizes="(max-width: 768px) 300px, (max-width: 1024px) 380px, 420px"
-                    alt="Irfan Shaikh - Full Stack Developer"
+                    src="/profile.png"
+                    alt="Washim Shaikh - Full Stack Developer"
                     width="420"
                     height="550"
                     loading="eager"
@@ -187,8 +185,7 @@ export default function HeroPortfolio() {
                     className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out z-10"
                     style={{
                       filter: 'drop-shadow(0 10px 40px rgba(0,0,0,0.08)) brightness(1.03) contrast(1.03)',
-                      objectPosition: 'center 30%',
-                      transform: 'scale(1.15)'
+                      objectPosition: 'center center'
                     }}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement

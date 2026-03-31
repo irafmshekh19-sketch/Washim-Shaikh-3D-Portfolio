@@ -39,26 +39,25 @@ interface Skill {
 
 const skills: Skill[] = [
   { name: 'Python', level: 90, color: '#f59e0b', category: 'Programming' },
-  { name: 'JavaScript', level: 85, color: '#eab308', category: 'Programming' },
-  { name: 'Java', level: 80, color: '#f97316', category: 'Programming' },
-  { name: 'React', level: 88, color: '#fbbf24', category: 'Frontend' },
+  { name: 'Java', level: 85, color: '#f97316', category: 'Programming' },
+  { name: 'C', level: 80, color: '#eab308', category: 'Programming' },
+  { name: 'C++', level: 80, color: '#d97706', category: 'Programming' },
   { name: 'HTML', level: 92, color: '#f97316', category: 'Frontend' },
   { name: 'CSS', level: 90, color: '#f59e0b', category: 'Frontend' },
-  { name: 'Node.js', level: 82, color: '#d97706', category: 'Backend' },
-  { name: 'Flask', level: 85, color: '#eab308', category: 'Backend' },
-  { name: 'MongoDB', level: 80, color: '#f59e0b', category: 'Databases' },
-  { name: 'MySQL', level: 82, color: '#f59e0b', category: 'Databases' },
-  { name: 'TensorFlow', level: 75, color: '#f97316', category: 'AI/ML' },
-  { name: 'MobileNetV2', level: 75, color: '#fbbf24', category: 'AI/ML' },
+  { name: 'JavaScript', level: 88, color: '#eab308', category: 'Frontend' },
+  { name: 'Bootstrap', level: 85, color: '#8b5cf6', category: 'Frontend' },
+  { name: 'jQuery', level: 82, color: '#fbbf24', category: 'Frontend' },
+  { name: 'Django', level: 88, color: '#059669', category: 'Backend' },
+  { name: 'MySQL', level: 85, color: '#f59e0b', category: 'Databases' },
+  { name: 'DBMS', level: 82, color: '#d97706', category: 'Databases' },
   { name: 'Git', level: 85, color: '#f97316', category: 'Tools' },
-  { name: 'Postman', level: 80, color: '#f97316', category: 'Tools' },
-  { name: 'Supabase', level: 78, color: '#d97706', category: 'Tools' },
-  { name: 'JWT Auth', level: 80, color: '#eab308', category: 'Tools' }
+  { name: 'GitHub', level: 85, color: '#333', category: 'Tools' },
+  { name: 'VS Code', level: 90, color: '#0078d4', category: 'Tools' }
 ]
 
 export default function SkillsVisualization() {
   const [selectedCategory, setSelectedCategory] = useState('All')
-  const categories = ['All', 'Programming', 'Frontend', 'Backend', 'Databases', 'AI/ML', 'Tools']
+  const categories = ['All', 'Programming', 'Frontend', 'Backend', 'Databases', 'Tools']
 
   const visibleSkills = skills.filter(skill => selectedCategory === 'All' || skill.category === selectedCategory)
 

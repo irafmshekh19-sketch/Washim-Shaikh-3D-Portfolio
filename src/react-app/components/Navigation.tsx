@@ -72,8 +72,8 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
           whileHover={{ scale: 1.03 }}
         >
           <img 
-            src="/logo-small.webp" 
-            alt="Irfan Shaikh Logo" 
+            src="/logo.png" 
+            alt="Washim Shaikh Logo" 
             width="80" 
             height="80" 
             loading="eager"
@@ -119,8 +119,8 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-1">
           <motion.a
-            href="mailto:irfanshaikh110805@email.com"
-            aria-label="Email Irfan Shaikh"
+            href="mailto:washimshaikh33@gmail.com"
+            aria-label="Email Washim Shaikh"
             className="p-2.5 text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -229,8 +229,8 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
               {/* Mobile Social Links */}
               <div className="flex flex-wrap justify-center gap-4 pt-4 border-t border-gray-200">
                 <motion.a
-                  href="mailto:irfanshaikh110805@email.com"
-                  aria-label="Email Irfan Shaikh"
+                  href="mailto:washimshaikh33@gmail.com"
+                  aria-label="Email Washim Shaikh"
                   className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}

@@ -1,6 +1,6 @@
-# 🚀 Irfan Shaikh - Interactive Portfolio
+# 🚀 Washim Shaikh - Interactive Portfolio
 
-**Live Portfolio:** [https://irfanshaikhportfolio.netlify.app/](https://irfanshaikhportfolio.netlify.app/)
+**Live Portfolio:** [https://washimshaikhportfolio.netlify.app/](https://washimshaikhportfolio.netlify.app/)
 
 A modern, interactive portfolio website showcasing my skills, projects, and experience as a Software Engineer and Full Stack Developer. Built with cutting-edge web technologies and featuring smooth animations, responsive design, and an engaging user experience.
 
@@ -43,8 +43,8 @@ A modern, interactive portfolio website showcasing my skills, projects, and expe
 
 1. Clone the repository
 ```bash
-git clone https://github.com/irfanshaikh110805-glitch/Irfan-Shekh-3D-Interactive-Resume.git
-cd Irfan-Shekh-3D-Interactive-Resume
+git clone https://github.com/washimshaikh/portfolio.git
+cd portfolio
 ```
 
 2. Install dependencies
@@ -89,32 +89,37 @@ The optimized production build will be in the `dist` folder.
 
 ## 🌟 Featured Projects
 
-1. **Hotel Everest Family Restaurant** - Full-stack restaurant booking platform
-2. **AI Healthcare Assistant** - Flask-based medical guidance system with NLP
-3. **Fruit & Vegetable Disease Detection** - AI image classification using TensorFlow
-4. **Interactive Portfolio** - This website you're looking at!
+1. **Agri Online Auction System** - Django-based e-auction platform for farmers and buyers
+2. **Text Classification with TensorFlow** - NLP-based text classification model
+3. **Vision Transformer** - Deep learning image classification system
+4. **Customer Churn Prediction** - ML model for customer retention analysis
+5. **Expense Tracker** - Personal finance management application
+6. **To-Do List Application** - Task management with CRUD operations
+7. **Smart Dustbin** - IoT-based waste management system
+8. **Blogging Platform** - Full-featured content management system
 
 ## 💼 About Me
 
-I'm Irfan Shaikh, an enthusiastic Computer Applications student with strong problem-solving skills and hands-on experience in:
+I'm Washim Shaikh, an enthusiastic Computer Science Engineering fresher with strong problem-solving skills and hands-on experience in:
 
-- **Programming**: Python, JavaScript, Java
-- **Frontend**: React, HTML, CSS
-- **Backend**: Node.js, Flask, REST APIs
-- **Databases**: MongoDB, MySQL
-- **AI/ML**: TensorFlow, MobileNetV2
-- **Tools**: Git, Postman, Supabase, JWT Authentication
+- **Programming**: Python, Java, C, C++
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap, jQuery
+- **Backend**: Django
+- **Databases**: MySQL, DBMS concepts
+- **Tools**: Git, GitHub, VS Code
+- **Areas of Interest**: Software Development, Web Applications, Data Analysis, Prompt Engineering
 
-Currently pursuing BCA at Smt Kumudben Debar College (2023-2026) and seeking opportunities as a Software Engineer, Web Developer, or Data Analyst.
+Currently pursuing B.E. in Computer Science and Engineering at Beary's Institute of Technology (BIT), Mangalore (2022-2026) with CGPA 7.87/10. Seeking opportunities as a Software Engineer, Web Developer, or Data Analyst.
 
 ## 📫 Contact
 
-- **Portfolio**: [irfanshaikhportfolio.netlify.app](https://irfanshaikhportfolio.netlify.app/)
-- **Email**: irfanshaikh110805@gmail.com
-- **Phone**: +91 9964264412
+- **Portfolio**: [washimshaikhportfolio.netlify.app](https://washimshaikhportfolio.netlify.app/)
+- **Email**: washimshaikh33@gmail.com
+- **Phone**: +91 888 495 8185
 - **Location**: Vijayapura, Karnataka, India
-- **LinkedIn**: [linkedin.com/in/irfan-shaikh-380461392](https://www.linkedin.com/in/irfan-shaikh-380461392)
-- **GitHub**: [github.com/irfan-shekh](https://github.com/irfan-shekh)
+- **LinkedIn**: [linkedin.com/in/washim-shaikh-349868281](https://www.linkedin.com/in/washim-shaikh-349868281)
+- **GitHub**: [github.com/washim-8](https://github.com/washim-8)
+- **WhatsApp**: [wa.me/918884958185](https://wa.me/918884958185)
 
 ## 📄 License
 
@@ -129,4 +134,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ⭐ **If you like this project, please give it a star!** ⭐
 
-Made with ❤️ by Irfan Shaikh
+Made with ❤️ by Washim Shaikh

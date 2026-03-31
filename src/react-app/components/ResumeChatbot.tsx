@@ -55,7 +55,7 @@ export default function ResumeChatbot() {
       } else if (lowerInput.includes('healthcare') || lowerInput.includes('project')) {
         response = "One of Irfan's top projects is an 'AI Healthcare Assistant' built with Flask and NLP. He also created a Fruit & Vegetable Disease Detection system using TensorFlow!"
       } else if (lowerInput.includes('contact') || lowerInput.includes('email')) {
-        response = "You can contact Irfan at irfanshaikh110805@gmail.com or call him at +91 9964264412. Would you like a link to his LinkedIn?"
+        response = "You can contact Washim at washimshaikh33@gmail.com or call him at +91 888 495 8185. Would you like a link to his LinkedIn?"
       } else if (lowerInput.includes('bca') || lowerInput.includes('education') || lowerInput.includes('college')) {
         response = "Irfan is currently pursuing his BCA (Bachelor of Computer Applications) at Smt Kumudben Debar College, graduating in 2026."
       } else if (lowerInput.includes('hello') || lowerInput.includes('hi ')) {

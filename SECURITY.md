@@ -38,7 +38,7 @@ This portfolio implements several security best practices:
 If you discover a security vulnerability, please:
 
 1. **DO NOT** open a public issue
-2. Email: irfanshaikh110805@gmail.com
+2. Email: washimshaikh33@gmail.com
 3. Include:
    - Description of the vulnerability
    - Steps to reproduce
@@ -81,4 +81,4 @@ If you're forking or using this code:
 
 ## Contact
 
-For security concerns: irfanshaikh110805@gmail.com
+For security concerns: washimshaikh33@gmail.com

@@ -28,23 +28,23 @@ const getStatColorClass = (color: string): string => {
 const achievements = [
   {
     icon: Award,
-    title: 'Web Development Intern',
-    description: 'Smt Kumudben Debar College (Academic)',
-    year: '2026',
+    title: 'State-Level Karate Player',
+    description: 'Represented as a State-Level Karate Player, demonstrating discipline and dedication.',
+    year: 'Achievement',
     color: '#f59e0b'
   },
   {
     icon: Zap,
-    title: 'Full-Stack Development',
-    description: 'Hands-on experience in development workflow',
-    year: '2026',
+    title: 'Internship Certifications',
+    description: 'Completed internships in AI with Python, Machine Learning with Python, and Full Stack Development.',
+    year: '2024-2025',
     color: '#eab308'
   },
   {
     icon: Target,
-    title: 'BCA Student',
-    description: 'Computer Applications (2023-2026)',
-    year: '2023-2026',
+    title: 'Active Participant',
+    description: 'Active participant in hackathons, workshops, and technical events.',
+    year: 'Ongoing',
     color: '#d97706'
   }
 ]
@@ -97,17 +97,17 @@ export default function AboutSection() {
 
             <div className="space-y-6 text-gray-700 body-md">
               <p className="leading-loose">
-                <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent font-semibold text-lg">Hi! I'm Irfan Shaikh</span>, an enthusiastic Computer Applications student with strong <span className="font-semibold text-amber-600">problem-solving skills</span> and hands-on experience in Python, web development, and database management.
+                <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent font-semibold text-lg">Hi! I'm Washim Shaikh</span>, an enthusiastic Computer Science Engineering fresher with strong <span className="font-semibold text-amber-600">problem-solving skills</span> and hands-on experience in Python, web development, and database management.
                 My journey is driven by a passion for building and deploying web applications that solve real-world challenges.
               </p>
 
               <p className="leading-loose">
-                Currently pursuing my <span className="font-semibold text-amber-700">Bachelor of Computer Applications (BCA)</span> at <span className="font-semibold text-amber-600">Smt Kumudben Debar College of Commerce, Science & Management Studies / RCUB</span> (2023-2026), I'm skilled in building web applications, managing data, and applying analytical approaches to solve challenges.
+                Currently pursuing my <span className="font-semibold text-amber-700">Bachelor of Engineering (B.E.) in Computer Science and Engineering</span> at <span className="font-semibold text-amber-600">Beary's Institute of Technology (BIT), Mangalore</span> (2022-2026) with a <span className="font-semibold text-amber-600">CGPA of 7.87/10</span>. I'm skilled in building web applications, managing data, and applying analytical approaches to solve challenges.
               </p>
 
               <p className="leading-loose">
-                I specialize in <span className="mono-text text-amber-700 bg-amber-50 px-2 py-1 rounded">Python</span>, <span className="mono-text text-green-700 bg-green-50 px-2 py-1 rounded">JavaScript</span>, <span className="mono-text text-orange-700 bg-orange-50 px-2 py-1 rounded">React</span>, and <span className="mono-text text-yellow-700 bg-yellow-50 px-2 py-1 rounded">Flask</span>, with experience in <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent font-semibold">AI/ML technologies</span> like TensorFlow and MobileNetV2.
-                I'm interested in emerging areas such as prompt engineering and seeking opportunities as a Software Engineer, Web Developer, or Data Analyst.
+                I specialize in <span className="mono-text text-amber-700 bg-amber-50 px-2 py-1 rounded">Python</span>, <span className="mono-text text-green-700 bg-green-50 px-2 py-1 rounded">Java</span>, <span className="mono-text text-orange-700 bg-orange-50 px-2 py-1 rounded">C/C++</span>, and <span className="mono-text text-yellow-700 bg-yellow-50 px-2 py-1 rounded">Django</span>, with experience in <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent font-semibold">web development and database management</span>.
+                I'm proficient in emerging areas such as <span className="font-semibold text-amber-600">Software Development, Web Applications, Data Analysis, and Prompt Engineering</span>, seeking opportunities as a Software Engineer, Web Developer, or Data Analyst.
               </p>
             </div>
 
@@ -186,7 +186,7 @@ export default function AboutSection() {
             {[
               { number: '5+', label: 'Major Projects', color: '#f59e0b' },
               { number: '100%', label: 'Dedicated Focus', color: '#eab308' },
-              { number: 'BCA', label: 'Student', color: '#fbbf24' },
+              { number: 'B.E.', label: 'CSE Student', color: '#fbbf24' },
               { number: '24/7', label: 'Support', color: '#f97316' }
             ].map((stat, index) => (
               <motion.div
@@ -196,7 +196,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl p-4 md:p-6 border border-gray-200 text-center hover:border-gray-300 transition-all duration-300 group shadow-sm"
               >
-                <div className={`text-4xl font-display font-black mb-2 group-hover:scale-110 transition-transform duration-300 text-dynamic ${getStatColorClass(stat.color)}`}>
+                <div className={`text-4xl font-display font-black mb-2 group-hover:scale-110 transition-transform duration-300 text-dynamic whitespace-nowrap ${getStatColorClass(stat.color)}`}>
                   {stat.number}
                 </div>
                 <div className="caption text-gray-600 font-medium">
@@ -215,7 +215,7 @@ export default function AboutSection() {
           >
             <h4 className="font-display text-xl font-bold text-gray-900 mb-3 bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">Languages</h4>
             <p className="body-md text-gray-700 leading-relaxed">
-              I speak <span className="font-bold text-amber-600">English</span>, <span className="font-bold text-yellow-600">Hindi</span>, and <span className="font-bold text-orange-600">Kannada</span>, enabling me to collaborate effectively with diverse teams and clients.
+              I speak <span className="font-bold text-amber-600">English</span>, <span className="font-bold text-yellow-600">Hindi</span>, <span className="font-bold text-orange-600">Urdu</span>, and <span className="font-bold text-green-600">Kannada</span>, enabling me to collaborate effectively with diverse teams and clients.
               <span className="text-2xl ml-2">🌍💬</span>
             </p>
           </motion.div>

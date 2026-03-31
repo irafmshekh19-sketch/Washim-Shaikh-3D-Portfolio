@@ -76,7 +76,7 @@ All high-priority improvements have been implemented! Here's what's been done an
      - `{{from_name}}` - Sender's name
      - `{{from_email}}` - Sender's email
      - `{{message}}` - Message content
-     - `{{to_email}}` - Your email (irfanshaikh110805@gmail.com)
+     - `{{to_email}}` - Your email (washimshaikh33@gmail.com)
 
 3. **Get Your Credentials**:
    - Service ID (from Email Services page)

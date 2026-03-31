@@ -57,7 +57,7 @@ function DelayedMount({ children, delay = 1000 }: { children: React.ReactNode, d
     // Wait for the browser to become idle, or fallback to a timeout
     const timeout = setTimeout(() => {
       if ('requestIdleCallback' in window) {
-        (window as any).requestIdleCallback(() => setShouldMount(true), { timeout: 2000 });
+        (window as Window & { requestIdleCallback: (cb: () => void, options?: { timeout: number }) => void }).requestIdleCallback(() => setShouldMount(true), { timeout: 2000 });
       } else {
         setShouldMount(true);
       }
@@ -227,7 +227,7 @@ export default function Home() {
                 Specializing in modern web development and 3D interactions.
               </p>
               <div className="flex space-x-4">
-                <a href="mailto:irfanshaikh110805@gmail.com" className="text-gray-500 hover:text-amber-500 transition-colors">
+                <a href="mailto:washimshaikh33@gmail.com" className="text-gray-500 hover:text-amber-500 transition-colors">
                   Email
                 </a>
                 <a href="https://www.linkedin.com/in/irfan-shaikh-380461392" className="text-gray-500 hover:text-amber-500 transition-colors">

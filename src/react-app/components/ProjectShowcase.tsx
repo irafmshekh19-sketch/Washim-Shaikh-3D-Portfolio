@@ -24,105 +24,20 @@ interface Project {
 const projects: Project[] = [
   {
     id: '1',
-    title: 'Hotel Everest Family Restaurant',
-    description: 'A full-featured restaurant booking and food ordering platform with authentic Indian cuisine menu, table reservations, shopping cart, and user authentication.',
+    title: 'Agri Online Auction System',
+    description: 'Django-based e-auction platform for farmers and buyers. Major project featuring real-time bidding, user authentication, product listings, and secure payment integration for agricultural products.',
     type: 'fullstack',
-    technologies: ['React', 'Supabase', 'Authentication', 'Responsive Design'],
-    image: '/restaurant-hero.webp',
-    demoUrl: 'https://hoteleverestfamilyrestaurant.netlify.app/',
+    technologies: ['Django', 'Python', 'JavaScript', 'MySQL', 'Bootstrap'],
+    image: '',
+    demoUrl: '#',
     githubUrl: '#',
     highlights: [
-      'Table Booking System',
-      'Menu Management',
+      'Real-time Bidding System',
       'User Authentication',
-      'Mobile Responsive'
-    ],
-    color: '#f97316'
-  },
-  {
-    id: '2',
-    title: 'AI Healthcare Assistant Web App',
-    description: 'Built a Flask-based AI healthcare assistant using NLP logic and REST APIs to provide automated medical guidance for common health queries.',
-    type: 'web',
-    technologies: ['Python', 'Flask', 'NLP', 'REST APIs'],
-    image: '/mediguardianaipicture.webp',
-    demoUrl: '#',
-    githubUrl: '#',
-    highlights: [
-      'NLP Integration',
-      'Medical Guidance',
-      'REST API',
-      'Flask Backend'
+      'Product Management',
+      'Secure Transactions'
     ],
     color: '#f59e0b'
-  },
-  {
-    id: '3',
-    title: 'Fruit & Vegetable Disease Detection System',
-    description: 'Created an AI-based image classification system using TensorFlow MobileNetV2 and a Flask API for real-time fruit and vegetable disease detection.',
-    type: 'web',
-    technologies: ['Python', 'TensorFlow', 'MobileNetV2', 'Flask'],
-    image: '/detect-fruit-vegetable.webp',
-    demoUrl: '#',
-    githubUrl: '#',
-    highlights: [
-      'AI Classification',
-      'Image Recognition',
-      'Real-time Detection',
-      'Mobile Optimized'
-    ],
-    color: '#eab308'
-  },
-  {
-    id: '4',
-    title: 'Interactive Portfolio Website',
-    description: 'A modern portfolio website featuring interactive animations, smooth transitions, and responsive design built with React and Framer Motion.',
-    type: 'web',
-    technologies: ['React', 'TypeScript', 'Framer Motion', 'Tailwind CSS'],
-    image: '/devfolio.webp',
-    demoUrl: '#',
-    githubUrl: '#',
-    highlights: [
-      'Interactive Animations',
-      'Responsive Design',
-      'Modern UI',
-      'Performance Optimized'
-    ],
-    color: '#f59e0b'
-  },
-  {
-    id: '5',
-    title: 'Database Management System',
-    description: 'Developed database solutions using MongoDB and MySQL with efficient data management and query optimization for web applications.',
-    type: 'fullstack',
-    technologies: ['MongoDB', 'MySQL', 'Node.js', 'Express'],
-    image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop&q=80',
-    demoUrl: '#',
-    githubUrl: '#',
-    highlights: [
-      'Database Design',
-      'Query Optimization',
-      'Data Management',
-      'API Integration'
-    ],
-    color: '#f97316'
-  },
-  {
-    id: '6',
-    title: 'HeavyDuty Parts — Industrial E-Commerce',
-    description: 'Full-stack industrial hardware e-commerce platform (AdiSync Solutions) for selling heavy machinery parts in India. Features WhatsApp checkout, a rotating hero banner, product catalog with categories, search & filtering, and INR currency support.',
-    type: 'fullstack',
-    technologies: ['React 19', 'TypeScript', 'Hono', 'Cloudflare Workers', 'Tailwind CSS', 'Netlify'],
-    image: '/heavydutyparts-shop.webp',
-    demoUrl: 'https://heavydutyparts-shop.netlify.app',
-    githubUrl: '#',
-    highlights: [
-      'WhatsApp Checkout',
-      'Product Catalog & Search',
-      'Cloudflare Workers API',
-      'Responsive Design'
-    ],
-    color: '#d97706'
   }
 ]
 
@@ -159,7 +74,7 @@ const getColorOpacityClass = (color: string) => {
 export default function ProjectShowcase() {
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 md:gap-8 max-w-2xl mx-auto">
         {projects.map((project, index) => {
           const Icon = typeIcons[project.type]
           
@@ -174,21 +89,32 @@ export default function ProjectShowcase() {
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={`${project.title} - ${project.description.substring(0, 100)}`}
-                  loading="lazy"
-                  width="400"
-                  height="300"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  onError={(e) => {
-                    // Fallback for broken images
-                    const target = e.target as HTMLImageElement
-                    target.onerror = null;
-                    target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23374151" width="400" height="300"/%3E%3Ctext fill="%239CA3AF" font-family="sans-serif" font-size="18" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage unavailable%3C/text%3E%3C/svg%3E'
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+                {project.image ? (
+                  <>
+                    <img
+                      src={project.image}
+                      alt={`${project.title} - ${project.description.substring(0, 100)}`}
+                      loading="lazy"
+                      width="400"
+                      height="300"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        // Fallback for broken images
+                        const target = e.target as HTMLImageElement
+                        target.onerror = null;
+                        target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23374151" width="400" height="300"/%3E%3Ctext fill="%239CA3AF" font-family="sans-serif" font-size="18" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage unavailable%3C/text%3E%3C/svg%3E'
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+                  </>
+                ) : (
+                  <div className={`w-full h-full bg-gradient-to-br ${project.type === 'fullstack' ? 'from-amber-400 via-yellow-500 to-orange-500' : 'from-amber-300 via-yellow-400 to-amber-500'} flex items-center justify-center`}>
+                    <div className="text-center text-white p-6">
+                      <Icon size={48} className="mx-auto mb-2 opacity-80" />
+                      <p className="text-sm font-medium opacity-90">{project.type.charAt(0).toUpperCase() + project.type.slice(1)} Project</p>
+                    </div>
+                  </div>
+                )}
                 
                 {/* Project Type Badge */}
                 <div className={`absolute top-4 left-4 flex items-center gap-2 px-3 py-1 rounded-full text-white text-sm font-medium ${getTypeClass(project.type)}`}>
@@ -196,8 +122,8 @@ export default function ProjectShowcase() {
                   {project.type.charAt(0).toUpperCase() + project.type.slice(1)}
                 </div>
 
-                {/* Action Buttons */}
-                <div className="absolute top-4 right-4 flex gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 z-20">
+                {/* Action Buttons - Always Visible */}
+                <div className="absolute top-4 right-4 flex gap-2 transition-all duration-300 z-20">
                   {project.demoUrl && (
                     <motion.button
                       onClick={() => {
@@ -208,11 +134,11 @@ export default function ProjectShowcase() {
                       disabled={project.demoUrl === '#'}
                       title={project.demoUrl === '#' ? `${project.title} demo coming soon!` : `View live demo of ${project.title}`}
                       aria-label={`View live demo of ${project.title}`}
-                      className={`p-2 bg-white/20 backdrop-blur-sm rounded-full text-white transition-colors duration-300 ${project.demoUrl === '#' ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white/30'}`}
+                      className={`p-3 bg-white/90 backdrop-blur-sm rounded-full text-gray-900 shadow-lg transition-all duration-300 ${project.demoUrl === '#' ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white hover:shadow-xl'}`}
                       whileHover={project.demoUrl !== '#' ? { scale: 1.1 } : {}}
                       whileTap={project.demoUrl !== '#' ? { scale: 0.95 } : {}}
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink size={18} />
                     </motion.button>
                   )}
                   {project.githubUrl && (
@@ -225,11 +151,11 @@ export default function ProjectShowcase() {
                       disabled={project.githubUrl === '#'}
                       title={project.githubUrl === '#' ? `Source code is private` : `View source code of ${project.title}`}
                       aria-label={`View source code of ${project.title}`}
-                      className={`p-2 bg-white/20 backdrop-blur-sm rounded-full text-white transition-colors duration-300 ${project.githubUrl === '#' ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white/30'}`}
+                      className={`p-3 bg-white/90 backdrop-blur-sm rounded-full text-gray-900 shadow-lg transition-all duration-300 ${project.githubUrl === '#' ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white hover:shadow-xl'}`}
                       whileHover={project.githubUrl !== '#' ? { scale: 1.1 } : {}}
                       whileTap={project.githubUrl !== '#' ? { scale: 0.95 } : {}}
                     >
-                      <GithubIcon size={16} />
+                      <GithubIcon size={18} />
                     </motion.button>
                   )}
                 </div>
@@ -297,7 +223,7 @@ export default function ProjectShowcase() {
       >
         <motion.button
           onClick={() => {
-            window.open('https://github.com/irfanshaikh110805-glitch', '_blank')
+            window.open('https://github.com/washim-8', '_blank')
           }}
           className="px-6 py-3 bg-gradient-to-r from-amber-500 to-yellow-500 text-white rounded-lg font-medium hover:from-amber-600 hover:to-yellow-600 transition-all duration-300"
           whileHover={{ scale: 1.05 }}
