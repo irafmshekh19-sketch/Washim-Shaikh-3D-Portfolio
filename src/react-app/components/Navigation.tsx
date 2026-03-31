@@ -1,6 +1,6 @@
+import { useState, memo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
 
 // Custom SVG icons for social links (brand icons removed from lucide-react)
 const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
@@ -38,7 +38,7 @@ interface NavigationProps {
   setActiveSection: (section: string) => void
 }
 
-export default function Navigation({ activeSection, setActiveSection }: NavigationProps) {
+const Navigation = memo(function Navigation({ activeSection, setActiveSection }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navigationItems = [
@@ -285,4 +285,6 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
       </AnimatePresence>
     </motion.nav>
   )
-}
+})
+
+export default Navigation

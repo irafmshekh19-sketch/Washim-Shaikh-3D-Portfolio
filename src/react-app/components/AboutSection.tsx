@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Award, Coffee, Heart, Zap, Target } from 'lucide-react'
 import Timeline3D from './Timeline3D'
+import { memo } from 'react'
 
 // Helper function to get CSS class name for achievement colors
 const getAchievementColorClass = (color: string): string => {
@@ -67,12 +68,13 @@ const philosophy = [
   }
 ]
 
-export default function AboutSection() {
+const AboutSection = memo(function AboutSection() {
   return (
     <div className="w-full max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8 }}
         className="text-center mb-10 md:mb-16"
       >
@@ -89,6 +91,7 @@ export default function AboutSection() {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
@@ -125,6 +128,7 @@ export default function AboutSection() {
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-20px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow-sm"
                 >
@@ -145,6 +149,7 @@ export default function AboutSection() {
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
@@ -160,6 +165,7 @@ export default function AboutSection() {
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-20px" }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300 group"
                   >
@@ -193,6 +199,7 @@ export default function AboutSection() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-20px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl p-4 md:p-6 border border-gray-200 text-center hover:border-gray-300 transition-all duration-300 group shadow-sm"
               >
@@ -226,4 +233,6 @@ export default function AboutSection() {
       <Timeline3D />
     </div>
   )
-}
+})
+
+export default AboutSection

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Monitor, Smartphone, Database, ExternalLink } from 'lucide-react'
+import { memo } from 'react'
 
 // Custom GitHub icon (brand icons removed from lucide-react)
 const GithubIcon = ({ size = 16 }: { size?: number }) => (
@@ -71,7 +72,7 @@ const getColorOpacityClass = (color: string) => {
   return colorMap[color] || 'project-color-amber-opacity'
 }
 
-export default function ProjectShowcase() {
+const ProjectShowcase = memo(function ProjectShowcase() {
   return (
     <div className="w-full">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 md:gap-8 max-w-2xl mx-auto">
@@ -83,6 +84,7 @@ export default function ProjectShowcase() {
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-all duration-500 shadow-sm"
               whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
@@ -234,4 +236,6 @@ export default function ProjectShowcase() {
       </motion.div>
     </div>
   )
-}
+})
+
+export default ProjectShowcase

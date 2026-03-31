@@ -181,8 +181,8 @@ export default function Home() {
         </div>
       </LazySection>
 
-      {/* Quick Navigation Dots */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 hidden lg:flex flex-col gap-4">
+      {/* Quick Navigation Dots - Mobile & Desktop */}
+      <div className="fixed right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-3 md:gap-4">
         {[
           { id: 'about', icon: User, label: 'About' },
           { id: 'work', icon: Briefcase, label: 'Work' },
@@ -199,15 +199,18 @@ export default function Home() {
                 element.scrollIntoView({ behavior: 'smooth' })
               }
             }}
-            className={`p-3 rounded-full transition-all duration-300 group relative ${activeSection === item.id
-              ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/25'
-              : 'bg-white/80 border border-gray-200 text-gray-500 hover:bg-white hover:text-amber-500'
+            className={`p-2.5 md:p-3 rounded-full transition-all duration-300 group relative nav-dot-button ${activeSection === item.id
+              ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/25 active'
+              : 'bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-500 hover:bg-white hover:text-amber-500 hover:border-amber-300'
               }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            aria-label={`Navigate to ${item.label} section`}
+            aria-current={activeSection === item.id ? 'true' : 'false'}
           >
-            <item.icon size={20} />
-            <span className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 bg-white border border-gray-200 text-gray-900 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg">
+            <item.icon size={18} className="md:w-5 md:h-5" />
+            {/* Tooltip - Desktop only */}
+            <span className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 bg-white border border-gray-200 text-gray-900 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg pointer-events-none hidden md:block">
               {item.label}
             </span>
           </motion.button>

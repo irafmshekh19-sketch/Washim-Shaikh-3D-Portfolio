@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Code, Database, Globe, Zap, Users, LucideIcon } from 'lucide-react'
+import { memo } from 'react'
 
 // Helper function to get CSS class name for service colors
 const getServiceColorClass = (color: string): string => {
@@ -80,12 +81,13 @@ const services: Service[] = [
   }
 ]
 
-export default function ServicesSection() {
+const ServicesSection = memo(function ServicesSection() {
   return (
     <div className="w-full max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8 }}
         className="text-center mb-10 md:mb-16"
       >
@@ -106,6 +108,7 @@ export default function ServicesSection() {
               key={service.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative bg-white rounded-2xl p-6 md:p-8 border border-gray-200 hover:border-gray-300 transition-all duration-500 overflow-hidden shadow-sm"
               whileHover={{ y: -10, scale: 1.02 }}
@@ -144,6 +147,7 @@ export default function ServicesSection() {
                       key={fIndex}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-10px" }}
                       transition={{ duration: 0.4, delay: (index * 0.1) + (fIndex * 0.05) }}
                       className="flex items-center text-sm text-gray-700"
                     >
@@ -154,7 +158,7 @@ export default function ServicesSection() {
                 </div>
               </div>
 
-              {/* CTA Button */}
+              {/* CTA Button - Always visible on mobile, hover-triggered on desktop */}
               <motion.button
                 onClick={() => {
                   const contactSection = document.getElementById('contact')
@@ -162,7 +166,10 @@ export default function ServicesSection() {
                     contactSection.scrollIntoView({ behavior: 'smooth' })
                   }
                 }}
-                className={`mt-8 w-full px-6 py-3 bg-gradient-to-r ${service.gradient} text-white rounded-xl font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300`}
+                className={`mt-8 w-full px-6 py-3 bg-gradient-to-r ${service.gradient} text-white rounded-xl font-medium 
+                  opacity-100 sm:opacity-0 sm:group-hover:opacity-100 
+                  translate-y-0 sm:translate-y-4 sm:group-hover:translate-y-0 
+                  transition-all duration-300`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -209,4 +216,6 @@ export default function ServicesSection() {
       </motion.div>
     </div>
   )
-}
+})
+
+export default ServicesSection

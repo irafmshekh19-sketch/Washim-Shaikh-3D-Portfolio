@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { motion } from 'framer-motion'
 
 const getSkillColorClass = (color: string): string => {
@@ -55,7 +55,7 @@ const skills: Skill[] = [
   { name: 'VS Code', level: 90, color: '#0078d4', category: 'Tools' }
 ]
 
-export default function SkillsVisualization() {
+const SkillsVisualization = memo(function SkillsVisualization() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const categories = ['All', 'Programming', 'Frontend', 'Backend', 'Databases', 'Tools']
 
@@ -66,6 +66,7 @@ export default function SkillsVisualization() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8 }}
         className="text-center mb-8 md:mb-12"
       >
@@ -134,6 +135,7 @@ export default function SkillsVisualization() {
                   className={`h-full rounded-full ${getSkillColorClass(skill.color)} shadow-[0_0_10px_currentColor]`}
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
                 />
               </div>
@@ -143,4 +145,6 @@ export default function SkillsVisualization() {
       </motion.div>
     </div>
   )
-}
+})
+
+export default SkillsVisualization

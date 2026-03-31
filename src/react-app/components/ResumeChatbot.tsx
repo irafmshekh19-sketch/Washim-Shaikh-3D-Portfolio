@@ -132,7 +132,7 @@ export default function ResumeChatbot() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Suggested Questions */}
+            {/* Suggested Questions - Enhanced touch targets for mobile */}
             {messages[messages.length - 1]?.sender === 'ai' && !isTyping && (
               <div className="px-4 py-2 border-t border-gray-100 flex flex-wrap gap-2 overflow-x-auto bg-gray-50/20 max-h-32 scrollbar-none">
                 {[
@@ -150,7 +150,7 @@ export default function ResumeChatbot() {
                       setMessages(prev => [...prev, { id: Date.now().toString(), text: q, sender: 'user' }])
                       generateAIResponse(q)
                     }}
-                    className="text-xs px-3 py-1.5 bg-white border border-gray-200 text-gray-600 rounded-full hover:border-amber-400 hover:text-amber-500 hover:bg-amber-50/50 transition-all duration-300 whitespace-nowrap shadow-sm"
+                    className="text-xs px-4 py-2.5 bg-white border border-gray-200 text-gray-600 rounded-full hover:border-amber-400 hover:text-amber-500 hover:bg-amber-50/50 transition-all duration-300 whitespace-nowrap shadow-sm"
                   >
                     {q}
                   </button>

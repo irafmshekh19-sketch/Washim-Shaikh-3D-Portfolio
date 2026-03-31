@@ -175,25 +175,28 @@ export default function HeroPortfolio() {
               <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-[2rem] bg-gradient-to-br from-gray-50 via-white to-amber-50/20">
                 {/* Enhanced image with premium styling */}
                 <div className="relative w-full h-full flex items-center justify-center">
-                  <img
-                    src="/profile.png"
-                    alt="Washim Shaikh - Full Stack Developer"
-                    width="420"
-                    height="550"
-                    loading="eager"
-                    fetchPriority="high"
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out z-10"
-                    style={{
-                      filter: 'drop-shadow(0 10px 40px rgba(0,0,0,0.08)) brightness(1.03) contrast(1.03)',
-                      objectPosition: 'center center'
-                    }}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.onerror = null;
-                      target.style.display = 'none'
-                      console.error('Profile image failed to load')
-                    }}
-                  />
+                  <picture className="w-full h-full">
+                    <source srcSet="/profile.webp" type="image/webp" />
+                    <img
+                      src="/profile.png"
+                      alt="Washim Shaikh - Full Stack Developer"
+                      width="420"
+                      height="550"
+                      loading="eager"
+                      fetchPriority="high"
+                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out z-10"
+                      style={{
+                        filter: 'drop-shadow(0 10px 40px rgba(0,0,0,0.08)) brightness(1.03) contrast(1.03)',
+                        objectPosition: 'center center'
+                      }}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.onerror = null;
+                        target.style.display = 'none'
+                        console.error('Profile image failed to load')
+                      }}
+                    />
+                  </picture>
                 </div>
               </div>
             </motion.div>
