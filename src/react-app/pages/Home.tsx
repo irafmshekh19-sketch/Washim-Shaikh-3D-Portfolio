@@ -115,7 +115,7 @@ export default function Home() {
       <HeroPortfolio />
 
       {/* About Section */}
-      <LazySection className="py-20 px-4" id="about">
+      <LazySection className="py-20 px-4 relative" id="about">
         <div className="max-w-7xl mx-auto">
           <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center">Loading...</div>}>
             <AboutSection />
@@ -124,7 +124,7 @@ export default function Home() {
       </LazySection>
 
       {/* Featured Work Section */}
-      <LazySection className="py-20 px-4 bg-white" id="work">
+      <LazySection className="py-20 px-4 bg-white relative" id="work">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -146,21 +146,21 @@ export default function Home() {
       </LazySection>
 
       {/* Skills Section */}
-      <LazySection className="py-20 px-4" id="skills">
+      <LazySection className="py-20 px-4 relative" id="skills">
         <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center">Loading...</div>}>
           <SkillsVisualization />
         </Suspense>
       </LazySection>
 
       {/* Services Section */}
-      <LazySection className="py-20 px-4 bg-white" id="services">
+      <LazySection className="py-20 px-4 bg-white relative" id="services">
         <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center">Loading...</div>}>
           <ServicesSection />
         </Suspense>
       </LazySection>
 
       {/* Contact Section */}
-      <LazySection className="py-20 px-4" id="contact">
+      <LazySection className="py-20 px-4 relative" id="contact">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -190,7 +190,7 @@ export default function Home() {
           { id: 'services', icon: Wrench, label: 'Services' },
           { id: 'contact', icon: Mail, label: 'Contact' }
         ].map((item) => (
-          <motion.button
+          <button
             key={item.id}
             onClick={() => {
               setActiveSection(item.id)
@@ -199,12 +199,10 @@ export default function Home() {
                 element.scrollIntoView({ behavior: 'smooth' })
               }
             }}
-            className={`p-2.5 md:p-3 rounded-full transition-all duration-300 group relative nav-dot-button ${activeSection === item.id
-              ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/25 active'
-              : 'bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-500 hover:bg-white hover:text-amber-500 hover:border-amber-300'
+            className={`p-2.5 md:p-3 rounded-full transition-all duration-300 group relative nav-dot-button touch-manipulation ${activeSection === item.id
+              ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/25 active scale-100'
+              : 'bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-500 hover:bg-white hover:text-amber-500 hover:border-amber-300 hover:scale-110 active:scale-95'
               }`}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
             aria-label={`Navigate to ${item.label} section`}
             aria-current={activeSection === item.id ? 'true' : 'false'}
           >
@@ -213,7 +211,7 @@ export default function Home() {
             <span className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 bg-white border border-gray-200 text-gray-900 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg pointer-events-none hidden md:block">
               {item.label}
             </span>
-          </motion.button>
+          </button>
         ))}
       </div>
 

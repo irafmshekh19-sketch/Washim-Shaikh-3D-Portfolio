@@ -9,7 +9,9 @@ export default defineConfig({
     allowedHosts: true,
   },
   build: {
-    chunkSizeWarningLimit: 1000, // Reduced from 5000KB to 1000KB for better performance monitoring
+    chunkSizeWarningLimit: 1000,
+    cssCodeSplit: true, // Split CSS for better caching
+    minify: 'esbuild', // Use esbuild for faster builds (default in Vite)
     rollupOptions: {
       output: {
         manualChunks: {
@@ -18,6 +20,10 @@ export default defineConfig({
           'icons': ['lucide-react'],
           'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
         },
+        // Optimize chunk naming for better caching
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
   },
@@ -25,5 +31,9 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+    exclude: ['three', '@react-three/fiber', '@react-three/drei'], // Lazy load heavy 3D libraries
   },
 });

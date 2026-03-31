@@ -64,6 +64,7 @@ const Navigation = memo(function Navigation({ activeSection, setActiveSection }:
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100 shadow-sm"
+      style={{ isolation: 'isolate' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
         {/* Logo */}
@@ -72,12 +73,18 @@ const Navigation = memo(function Navigation({ activeSection, setActiveSection }:
           whileHover={{ scale: 1.03 }}
         >
           <img 
-            src="/logo.png" 
+            src="/logo.webp" 
             alt="Washim Shaikh Logo" 
             width="80" 
             height="80" 
             loading="eager"
+            fetchPriority="high"
             className="h-14 md:h-16 w-auto"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement
+              target.onerror = null
+              target.src = '/logo.png'
+            }}
           />
         </motion.div>
 
@@ -96,6 +103,7 @@ const Navigation = memo(function Navigation({ activeSection, setActiveSection }:
               whileTap={{ scale: 0.97 }}
               aria-label={`Navigate to ${item.label} section`}
               aria-current={activeSection === item.id ? 'page' : undefined}
+              style={{ willChange: 'transform' }}
             >
               {item.label}
             </motion.button>
@@ -188,95 +196,127 @@ const Navigation = memo(function Navigation({ activeSection, setActiveSection }:
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200"
+            className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 relative z-50"
           >
             <div className="px-6 py-4 space-y-4">
               {/* Mobile Navigation Links */}
-              {navigationItems.map((item, index) => (
-                <motion.button
+              {navigationItems.map((item) => (
+                <button
                   key={item.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  onClick={() => {
-                    setActiveSection(item.id)
-                    const element = document.getElementById(item.id)
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' })
-                    }
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    console.log('Clicked:', item.id) // Debug log
+                    
+                    // Close menu first
                     setIsMobileMenuOpen(false)
+                    
+                    // Update active section
+                    setActiveSection(item.id)
+                    
+                    // Wait for menu to close, then scroll
+                    setTimeout(() => {
+                      const element = document.getElementById(item.id)
+                      console.log('Element found:', element) // Debug log
+                      if (element) {
+                        const navHeight = 80 // Height of fixed navigation
+                        const elementPosition = element.getBoundingClientRect().top
+                        const offsetPosition = elementPosition + window.pageYOffset - navHeight
+                        
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth'
+                        })
+                      }
+                    }, 350) // Wait for menu close animation
                   }}
-                  className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-300 ${
+                  className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-300 touch-manipulation cursor-pointer ${
                     activeSection === item.id
                       ? 'bg-amber-500 text-white'
-                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100 active:bg-gray-200'
                   }`}
+                  style={{ 
+                    willChange: 'transform',
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
+                  type="button"
                 >
                   {item.label}
-                </motion.button>
+                </button>
               ))}
 
               {/* Mobile Social Links */}
               <div className="flex flex-wrap justify-center gap-4 pt-4 border-t border-gray-200">
-                <motion.a
+                <a
                   href="https://www.linkedin.com/in/washim-shaikh-349868281"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit LinkedIn Profile"
-                  className="p-3 text-gray-600 hover:text-amber-600 transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="p-3 text-gray-600 hover:text-amber-600 transition-colors duration-300 touch-manipulation"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
                 >
                   <LinkedinIcon size={24} />
-                </motion.a>
+                </a>
                 
-                <motion.a
+                <a
                   href="https://github.com/washim-8"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit GitHub Profile"
-                  className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-300 touch-manipulation"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
                 >
                   <GithubIcon size={24} />
-                </motion.a>
+                </a>
 
-                <motion.a
+                <a
                   href="https://www.facebook.com/washim.shaikh"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit Facebook Profile"
-                  className="p-3 text-gray-600 hover:text-amber-600 transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="p-3 text-gray-600 hover:text-amber-600 transition-colors duration-300 touch-manipulation"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
                 >
                   <FacebookIcon size={24} />
-                </motion.a>
+                </a>
 
-                <motion.a
+                <a
                   href="https://www.instagram.com/washim.shaikh"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit Instagram Profile"
-                  className="p-3 text-gray-600 hover:text-amber-600 transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="p-3 text-gray-600 hover:text-amber-600 transition-colors duration-300 touch-manipulation"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
                 >
                   <InstagramIcon size={24} />
-                </motion.a>
+                </a>
 
-                <motion.a
+                <a
                   href="https://wa.me/918884958185"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Connect on WhatsApp"
-                  className="p-3 text-gray-600 hover:text-amber-600 transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="p-3 text-gray-600 hover:text-amber-600 transition-colors duration-300 touch-manipulation"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
                 >
                   <WhatsappIcon size={24} />
-                </motion.a>
+                </a>
               </div>
 
             </div>

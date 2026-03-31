@@ -49,6 +49,12 @@ button, a {
   touch-action: manipulation;
 }
 
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
 /* Override default focus colors */
 button:focus,
 a:focus,
@@ -596,6 +602,13 @@ img {
   .smooth-scroll {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Optimize button transforms */
+  button[class*="motion"],
+  a[class*="motion"] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }
 
