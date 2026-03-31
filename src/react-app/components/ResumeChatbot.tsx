@@ -10,7 +10,7 @@ type Message = {
 
 const INITIAL_MESSAGE: Message = {
   id: '0',
-  text: "Hi! I'm Irfan's AI Assistant. Ask me anything about his skills, projects, or experience!",
+  text: "Hi! I'm Washim's AI Assistant. Ask me anything about his skills, projects, or experience!",
   sender: 'ai'
 }
 
@@ -40,26 +40,26 @@ export default function ResumeChatbot() {
     setIsTyping(true)
     
     setTimeout(() => {
-      let response = "I'm still learning! You can ask me about Irfan's skills (like Python, React), his Healthcare project, or how to contact him."
+      let response = "I'm still learning! You can ask me about Washim's skills (like Python, Django), his projects, or how to contact him."
       
       if (lowerInput.includes('freelance') || lowerInput.includes('hire')) {
-        response = "Yes! Irfan is available for freelance projects and full-time opportunities. He's always looking to build amazing things!"
+        response = "Yes! Washim is available for freelance projects and full-time opportunities. He's always looking to build amazing things!"
       } else if (lowerInput.includes('technologies') || lowerInput.includes('tech stack')) {
-        response = "Irfan works with a wide range of technologies, including React, TypeScript, Tailwind CSS, Python (Flask), and TensorFlow."
+        response = "Washim works with a wide range of technologies, including Python, Java, Django, HTML, CSS, JavaScript, and MySQL."
       } else if (lowerInput.includes('skills')) {
-        response = "Irfan specializes in Python, React, and Data Science. You can see more details in the 'My Expertise' section below!"
+        response = "Washim specializes in Python, Data Analysis, and Full Stack Development. You can see more details in the 'My Expertise' section below!"
       } else if (lowerInput.includes('python')) {
-        response = "Irfan is very skilled in Python! He uses it for backend development with Flask, and for AI/ML tasks utilizing TensorFlow and MobileNetV2."
-      } else if (lowerInput.includes('react')) {
-        response = "Yes, Irfan has strong frontend skills using React, TypeScript, and Tailwind CSS. This very portfolio is built with React 19 and Framer Motion!"
-      } else if (lowerInput.includes('healthcare') || lowerInput.includes('project')) {
-        response = "One of Irfan's top projects is an 'AI Healthcare Assistant' built with Flask and NLP. He also created a Fruit & Vegetable Disease Detection system using TensorFlow!"
+        response = "Washim is very skilled in Python! He uses it for AI models, Machine Learning, and backend development with Django."
+      } else if (lowerInput.includes('web') || lowerInput.includes('frontend')) {
+        response = "Yes, Washim has strong web development skills using HTML, CSS, JavaScript, Django, and Bootstrap."
+      } else if (lowerInput.includes('agri') || lowerInput.includes('project')) {
+        response = "One of Washim's top projects is an 'Agri Online Auction System' built with Django. He also worked on Text Classification and Vision Transformer projects!"
       } else if (lowerInput.includes('contact') || lowerInput.includes('email')) {
         response = "You can contact Washim at washimshaikh33@gmail.com or call him at +91 888 495 8185. Would you like a link to his LinkedIn?"
       } else if (lowerInput.includes('bca') || lowerInput.includes('education') || lowerInput.includes('college')) {
-        response = "Irfan is currently pursuing his BCA (Bachelor of Computer Applications) at Smt Kumudben Debar College, graduating in 2026."
+        response = "Washim is currently pursuing his B.E. in Computer Science and Engineering at Beary's Institute of Technology (BIT), graduating in 2026."
       } else if (lowerInput.includes('hello') || lowerInput.includes('hi ')) {
-        response = "Hello there! How can I help you learn more about Irfan's experience?"
+        response = "Hello there! How can I help you learn more about Washim's experience?"
       }
 
       setMessages(prev => [...prev, { id: Date.now().toString(), text: response, sender: 'ai' }])
@@ -93,7 +93,7 @@ export default function ResumeChatbot() {
             <div className="bg-gradient-to-r from-amber-500 to-yellow-500 p-4 flex items-center justify-between text-white">
               <div className="flex items-center gap-2">
                 <Bot size={24} />
-                <span className="font-semibold font-display">Chat with Irfan AI</span>
+                <span className="font-semibold font-display">Chat with Washim AI</span>
               </div>
               <button 
                 onClick={() => setIsOpen(false)}

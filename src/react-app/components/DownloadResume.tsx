@@ -19,7 +19,7 @@ export default function DownloadResume() {
       // Create a link element and trigger download
       const link = document.createElement('a')
       link.href = '/resume.pdf'
-      link.download = 'Irfan_Shaikh_Resume.pdf'
+      link.download = 'Washim_Shaikh_Resume.pdf'
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)

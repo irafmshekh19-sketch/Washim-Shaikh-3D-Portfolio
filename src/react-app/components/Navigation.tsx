@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Mail, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 // Custom SVG icons for social links (brand icons removed from lucide-react)
@@ -119,17 +119,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-1">
           <motion.a
-            href="mailto:washimshaikh33@gmail.com"
-            aria-label="Email Washim Shaikh"
-            className="p-2.5 text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Mail size={18} />
-          </motion.a>
-          
-          <motion.a
-            href="https://www.linkedin.com/in/irfan-shaikh-380461392"
+            href="https://www.linkedin.com/in/washim-shaikh-349868281"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit LinkedIn Profile"
@@ -141,7 +131,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
           </motion.a>
           
           <motion.a
-            href="https://github.com/irfanshaikh110805-glitch"
+            href="https://github.com/washim-8"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit GitHub Profile"
@@ -153,7 +143,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
           </motion.a>
 
           <motion.a
-            href="https://www.facebook.com/irfan.shaikh.870227"
+            href="https://www.facebook.com/washim.shaikh"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Facebook Profile"
@@ -165,7 +155,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
           </motion.a>
 
           <motion.a
-            href="https://www.instagram.com/dark_rider170?igsh=dWhha2FqeHlqNHky"
+            href="https://www.instagram.com/washim.shaikh"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Instagram Profile"
@@ -177,7 +167,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
           </motion.a>
 
           <motion.a
-            href="https://wa.link/5fgh90"
+            href="https://wa.me/918884958185"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Connect on WhatsApp"
@@ -229,17 +219,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
               {/* Mobile Social Links */}
               <div className="flex flex-wrap justify-center gap-4 pt-4 border-t border-gray-200">
                 <motion.a
-                  href="mailto:washimshaikh33@gmail.com"
-                  aria-label="Email Washim Shaikh"
-                  className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Mail size={24} />
-                </motion.a>
-                
-                <motion.a
-                  href="https://www.linkedin.com/in/irfan-shaikh-380461392"
+                  href="https://www.linkedin.com/in/washim-shaikh-349868281"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit LinkedIn Profile"
@@ -251,7 +231,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 </motion.a>
                 
                 <motion.a
-                  href="https://github.com/irfanshaikh110805-glitch"
+                  href="https://github.com/washim-8"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit GitHub Profile"
@@ -263,7 +243,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 </motion.a>
 
                 <motion.a
-                  href="https://www.facebook.com/irfan.shaikh.870227"
+                  href="https://www.facebook.com/washim.shaikh"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit Facebook Profile"
@@ -275,7 +255,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 </motion.a>
 
                 <motion.a
-                  href="https://www.instagram.com/dark_rider170?igsh=dWhha2FqeHlqNHky"
+                  href="https://www.instagram.com/washim.shaikh"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit Instagram Profile"
@@ -287,7 +267,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 </motion.a>
 
                 <motion.a
-                  href="https://wa.link/5fgh90"
+                  href="https://wa.me/918884958185"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Connect on WhatsApp"

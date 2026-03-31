@@ -261,7 +261,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
-            <p>© 2024 Irfan Shaikh. All rights reserved. Crafted with passion and code.</p>
+            <p>© 2024 Washim Shaikh. All rights reserved. Crafted with passion and code.</p>
           </div>
         </div>
       </footer>

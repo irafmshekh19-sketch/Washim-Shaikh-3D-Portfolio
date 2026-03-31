@@ -13,7 +13,7 @@ export default function ProfileCard3D() {
   const { size, mouse } = useThree()
 
   // Load profile texture
-  const profileTexture = useTexture('/profile.webp')
+  const profileTexture = useTexture('/profile.png')
 
   // Spring animation for hover effects
   const { scale, color } = useSpring({
@@ -113,7 +113,7 @@ export default function ProfileCard3D() {
             anchorY="middle"
             font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
           >
-            IRFAN SHAIKH
+            WASHIM SHAIKH
           </Text>
 
           {/* Title */}
